@@ -49,8 +49,6 @@ class UserController {
 
     const user = await User.findByPk(req.userId);
 
-    console.log(req.userId, user.email);
-
     if (email !== user.email) {
       const userExists = await User.findOne({
         where: { email: req.body.email },
